@@ -1,0 +1,18 @@
+<div>
+    <h1>Course List...</h1>
+    <button (click)="handleAddCourse()" class="btn btn-primary">
+        Add Course
+    </button>
+    <hr />
+
+
+    <div *ngFor="let course of courseList" style="display: inline-block;margin: 5px;"> 
+        <app-single-course [course]="course"></app-single-course>
+    </div>
+
+<!-- 
+    <p>{{ courseList[0] }}</p>
+    <p>{{ courseList[1] }}</p>
+    <p>{{ courseList[2] }}</p>
+    <p>{{ courseList[3] }}</p> -->
+</div>

@@ -1,0 +1,15 @@
+ 
+
+  <div *ngIf="course!=null" class="card" style="width: 18rem;">
+    <img class="card-img-top" src="/assets/ltgrouplogo.jpeg" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{ course.name | uppercase }}</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <p class="card-text">Start Date : {{ course.startDate | date}}</p>
+      <p class="card-text">Trainer: {{ course.trainer }}</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+
+
+
