@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -10,10 +10,11 @@ export class HeaderComponent implements OnInit {
   public companyName: string = 'LnT';
   public logoUrl: string = '/assets/ltgrouplogo.jpeg'
 
-  constructor() { 
+  constructor(private changeDetector: ChangeDetectorRef) { 
+    console.log(changeDetector)
     setTimeout(() => {
       this.companyName = 'Larsen & Turbo'
-    }, 7000);
+    }, 10000);
   }
 
   ngOnInit(): void {

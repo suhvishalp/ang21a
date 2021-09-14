@@ -1,0 +1,33 @@
+
+<h1>Movies</h1>
+
+<div *ngIf="movieList.length > 0;else noMovies">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Genre</th>
+                <th>Stock</th>
+                <th>Rate</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let movie of movieList">
+                <td>{{movie.title}}</td>
+                <td>{{movie.genre.name}}</td>
+                <td>{{movie.numberInStock}}</td>
+                <td>{{movie.dailyRentalRate}}</td>
+                <td>
+                    <button (click)="handleRemove(movie)" class="btn btn-sm btn-danger">
+                        Remove
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<ng-template #noMovies>
+    <h3>No movies found in the database</h3>
+</ng-template>

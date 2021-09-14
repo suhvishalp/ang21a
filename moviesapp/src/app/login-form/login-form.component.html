@@ -1,0 +1,33 @@
+
+<h1>Login Form</h1>
+
+<form #loginform="ngForm" (ngSubmit)="handleLogin(loginform)">
+    <div class="form-group">
+      <label for="email">Email address</label>
+      <input type="text" 
+            class="form-control" 
+            id="email" 
+            ngModel
+            #email="ngModel"
+            name="email"
+            required
+            minlength="6"
+            placeholder="Enter email">
+        <div *ngIf="email.touched && !email.valid">   
+            <div *ngIf="email.errors?.required" class="alert alert-danger">Email is required</div>
+            <div *ngIf="email.errors?.minlength" class="alert alert-danger">Min {{email.errors?.minlength.requiredLength}} letters required</div>
+
+        </div>
+    </div>
+    <div class="form-group">
+      <label for="pwd">Password</label>
+      <input type="password" 
+            class="form-control" 
+            id="pwd" 
+            ngModel
+            name="password"
+            required
+            placeholder="Password">
+    </div>
+    <button type="submit" class="btn btn-primary">Login</button>
+  </form>

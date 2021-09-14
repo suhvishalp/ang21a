@@ -5,9 +5,11 @@
     </button>
     <hr />
 
+    <h3 *ngIf="selectedCourse">Selected Course = {{ selectedCourse.name }} </h3>
 
-    <div *ngFor="let course of courseList" style="display: inline-block;margin: 5px;"> 
-        <app-single-course [course]="course"></app-single-course>
+    <div *ngFor="let course of courseList | coursefilter " style="display: inline-block;margin: 5px;"> 
+        <app-single-course [course]="course" 
+                    (onSelectEnroll)="handleOnSelectCourse($event)"></app-single-course>
     </div>
 
 <!-- 
